@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ANIMATION AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+</head>
+
+<body>
+
+  <div class="title-bendera">
+    <h2>HUT RI KE-77</h2>
+  </div>
+
+  <div class="tiang-bendera">
+    <img src="img/tiang.png" alt="">
+  </div>
+
+  <input type="checkbox" id="check-bendera">
+  <label for="check-bendera">
+    <a id="btn-raise" onclick="togglePlay()">Naikan Bendera</a>
+    <div class="audio">
+      <audio id="audio" src="sound/LAGU INDONESIA RAYA TEXT DAN VOCAL ORIGINAL OFFICIAL.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </label>
+  <div class="container">
+    <div class="red"></div>
+    <div class="white"></div>
+  </div>
+
+  <!-- ANIMATION ON SCROLL LIBRARY -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+    });
+  </script>
+  <script type="text/javascript">
+    var myAudio = document.getElementById("audio");
+    var isPlaying = false;
+
+    function togglePlay() {
+      isPlaying ? myAudio.pause() : myAudio.play();
+    };
+
+    myAudio.onplaying = function () {
+      isPlaying = true;
+    };
+    myAudio.onpause = function () {
+      isPlaying = false;
+      myAudio.currentTime = 0;
+    };
+  </script>
+
+
+</body>
+
+</html>
